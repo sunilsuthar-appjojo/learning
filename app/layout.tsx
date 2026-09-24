@@ -1,9 +1,8 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import Sidebar from "@/components/Sidebar";
 import { ThemeProvider } from "@/components/ThemeProvider";
-import { ThemeToggle } from "@/components/ThemeToggle";
+import LayoutWrapper from "@/components/LayoutWrapper";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -16,8 +15,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "LEARNING - Dev Log",
-  description: "A developer journal and task tracker",
+  title: "SS LEARNING - Admin Panel",
+  description: "Manage your learning platform efficiently",
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
@@ -27,15 +26,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       suppressHydrationWarning
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex bg-gray-50 dark:bg-gray-950 text-black dark:text-white selection:bg-gray-300 selection:text-black dark:selection:bg-gray-700 dark:selection:text-white transition-colors duration-200">
+      <body className="min-h-full flex bg-gray-50 dark:bg-gray-900 transition-colors duration-200">
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-          <Sidebar />
-          <main className="flex-grow ml-64 min-h-screen relative">
-            <div className="absolute top-6 right-8 z-50">
-              <ThemeToggle />
-            </div>
-            {children}
-          </main>
+          <LayoutWrapper>{children}</LayoutWrapper>
         </ThemeProvider>
       </body>
     </html>

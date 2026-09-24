@@ -1,292 +1,297 @@
-"use client";
+'use client';
 
-import { useState, useEffect } from "react";
-import { Edit2, Trash2, X } from "lucide-react";
+import { useEffect, useState } from 'react';
+import Link from 'next/link';
+import { 
+  ClipboardList, 
+  FolderTree, 
+  BookOpen, 
+  Users, 
+  TrendingUp,
+  ArrowRight,
+  CheckCircle2,
+  Clock,
+  AlertCircle,
+  Loader2
+} from 'lucide-react';
 
-interface Blog {
-  id: number;
-  title: string;
-  slug: string;
-  content: string;
-  created_at: string;
+interface DashboardStats {
+  totalTasks: number;
+  pendingTasks: number;
+  inProgressTasks: number;
+  completedTasks: number;
 }
 
-export default function Home() {
-  const [blogs, setBlogs] = useState<Blog[]>([]);
-  const [title, setTitle] = useState("");
-  const [content, setContent] = useState("");
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState("");
-  
-  // Toast state
-  const [toast, setToast] = useState<{ message: string, type: 'success' | 'error' } | null>(null);
-  
-  // Edit modal state
-  const [editingBlog, setEditingBlog] = useState<Blog | null>(null);
-  const [editTitle, setEditTitle] = useState("");
-  const [editContent, setEditContent] = useState("");
+interface RecentTask {
+  id: string;
+  title: string;
+  status: string;
+  createdAt: string;
+}
 
-  // Delete modal state
-  const [deletingId, setDeletingId] = useState<number | null>(null);
-
-  const showToast = (message: string, type: 'success' | 'error' = 'success') => {
-    setToast({ message, type });
-    setTimeout(() => setToast(null), 3000); // 3 sec baad toast gayab
-  };
-
-  const fetchBlogs = async () => {
-    try {
-      const res = await fetch("/api/blogs");
-      if (!res.ok) throw new Error("Logs fetch karne me error");
-      const data = await res.json();
-      setBlogs(data);
-    } catch (err) {
-      console.error(err);
-    }
-  };
+export default function Dashboard() {
+  const [stats, setStats] = useState<DashboardStats>({
+    totalTasks: 0,
+    pendingTasks: 0,
+    inProgressTasks: 0,
+    completedTasks: 0,
+  });
+  const [recentTasks, setRecentTasks] = useState<RecentTask[]>([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetchBlogs();
+    fetchDashboardData();
   }, []);
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setLoading(true);
-    setError("");
-
+  const fetchDashboardData = async () => {
     try {
-      const res = await fetch("/api/blogs", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ title, content }),
-      });
+      // Fetch all tasks
+      const res = await fetch('/api/tasks');
+      if (res.ok) {
+        const tasks = await res.json();
+        
+        // Calculate stats
+        const totalTasks = tasks.length;
+        const pendingTasks = tasks.filter((t: any) => t.status === 'pending').length;
+        const inProgressTasks = tasks.filter((t: any) => t.status === 'in-progress').length;
+        const completedTasks = tasks.filter((t: any) => t.status === 'completed').length;
 
-      const data = await res.json();
-      if (!res.ok) throw new Error(data.error || "Kuch galat ho gaya");
+        setStats({
+          totalTasks,
+          pendingTasks,
+          inProgressTasks,
+          completedTasks,
+        });
 
-      setTitle("");
-      setContent("");
-      await fetchBlogs();
-      showToast("Update successfully add ho gaya!");
-    } catch (err: any) {
-      setError(err.message);
+        // Get 3 most recent tasks
+        const recent = tasks
+          .sort((a: any, b: any) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime())
+          .slice(0, 3);
+        setRecentTasks(recent);
+      }
+    } catch (error) {
+      console.error('Error fetching dashboard data:', error);
     } finally {
       setLoading(false);
     }
   };
 
-  const handleDelete = async () => {
-    if (deletingId === null) return;
-    
-    setLoading(true);
-    try {
-      const res = await fetch(`/api/blogs/${deletingId}`, { method: "DELETE" });
-      if (!res.ok) throw new Error("Delete failed");
-      await fetchBlogs();
-      showToast("Log deleted successfully!");
-    } catch (err) {
-      showToast("Failed to delete", 'error');
-    } finally {
-      setLoading(false);
-      setDeletingId(null);
+  const getTimeAgo = (dateString: string) => {
+    const now = new Date();
+    const date = new Date(dateString);
+    const seconds = Math.floor((now.getTime() - date.getTime()) / 1000);
+
+    if (seconds < 60) return 'Just now';
+    if (seconds < 3600) return `${Math.floor(seconds / 60)} minutes ago`;
+    if (seconds < 86400) return `${Math.floor(seconds / 3600)} hours ago`;
+    return `${Math.floor(seconds / 86400)} days ago`;
+  };
+
+  const getStatusIcon = (status: string) => {
+    switch (status) {
+      case 'completed': return { icon: CheckCircle2, color: 'text-green-500' };
+      case 'in-progress': return { icon: Clock, color: 'text-blue-500' };
+      default: return { icon: AlertCircle, color: 'text-orange-500' };
     }
   };
 
-  const handleEditSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!editingBlog) return;
-    
-    setLoading(true);
-    try {
-      const res = await fetch(`/api/blogs/${editingBlog.id}`, {
-        method: "PUT",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ title: editTitle, content: editContent }),
-      });
+  const statsCards = [
+    {
+      title: 'Total Tasks',
+      value: stats.totalTasks,
+      change: '+12%',
+      icon: ClipboardList,
+      color: 'from-blue-500 to-blue-600',
+      href: '/tasks'
+    },
+    {
+      title: 'Pending Tasks',
+      value: stats.pendingTasks,
+      change: `${stats.totalTasks > 0 ? Math.round((stats.pendingTasks / stats.totalTasks) * 100) : 0}%`,
+      icon: AlertCircle,
+      color: 'from-orange-500 to-orange-600',
+      href: '/tasks'
+    },
+    {
+      title: 'In Progress',
+      value: stats.inProgressTasks,
+      change: `${stats.totalTasks > 0 ? Math.round((stats.inProgressTasks / stats.totalTasks) * 100) : 0}%`,
+      icon: Clock,
+      color: 'from-purple-500 to-purple-600',
+      href: '/tasks'
+    },
+    {
+      title: 'Completed',
+      value: stats.completedTasks,
+      change: `${stats.totalTasks > 0 ? Math.round((stats.completedTasks / stats.totalTasks) * 100) : 0}%`,
+      icon: CheckCircle2,
+      color: 'from-green-500 to-green-600',
+      href: '/tasks'
+    },
+  ];
 
-      if (!res.ok) throw new Error("Update failed");
-
-      setEditingBlog(null);
-      await fetchBlogs();
-      showToast("Log updated successfully!");
-    } catch (err: any) {
-      showToast(err.message, 'error');
-    } finally {
-      setLoading(false);
-    }
-  };
-
-  const openEditModal = (blog: Blog) => {
-    setEditingBlog(blog);
-    setEditTitle(blog.title);
-    setEditContent(blog.content);
-  };
-
-  // Grouping blogs by Date
-  const groupedBlogs = blogs.reduce((acc, blog) => {
-    const date = new Date(blog.created_at).toLocaleDateString(undefined, {
-      weekday: 'short', year: 'numeric', month: 'long', day: 'numeric'
-    });
-    if (!acc[date]) acc[date] = [];
-    acc[date].push(blog);
-    return acc;
-  }, {} as Record<string, Blog[]>);
+  if (loading) {
+    return (
+      <div className="flex items-center justify-center min-h-screen">
+        <div className="text-center">
+          <Loader2 className="w-12 h-12 text-indigo-600 animate-spin mx-auto mb-4" />
+          <p className="text-gray-600 dark:text-gray-400">Loading dashboard...</p>
+        </div>
+      </div>
+    );
+  }
 
   return (
-    <div className="p-10 font-[family-name:var(--font-geist-sans)] max-w-6xl mx-auto transition-colors duration-200">
-      
-      {/* Toast UI */}
-      {toast && (
-        <div className={`fixed top-5 left-1/2 -translate-x-1/2 z-50 px-6 py-3 rounded shadow-lg transition-all ${toast.type === 'success' ? 'bg-black text-white dark:bg-white dark:text-black border-2 border-transparent' : 'bg-red-500 text-white'}`}>
-          <p className="font-bold tracking-wide">{toast.message}</p>
-        </div>
-      )}
-
-      {/* Edit Modal */}
-      {editingBlog && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm p-4">
-          <div className="bg-white dark:bg-gray-900 border-2 border-black dark:border-white p-6 w-full max-w-xl shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] dark:shadow-[8px_8px_0px_0px_rgba(255,255,255,1)]">
-            <div className="flex justify-between items-center mb-6">
-              <h2 className="text-2xl font-bold uppercase tracking-wider text-black dark:text-white">Edit Log</h2>
-              <button onClick={() => setEditingBlog(null)} className="text-gray-500 hover:text-black dark:hover:text-white">
-                <X className="w-6 h-6" />
-              </button>
-            </div>
-            
-            <form onSubmit={handleEditSubmit} className="space-y-5">
-              <div>
-                <label className="block text-sm font-bold text-black dark:text-white mb-1 uppercase tracking-wider">Project / Task Title</label>
-                <input
-                  type="text" required value={editTitle} onChange={(e) => setEditTitle(e.target.value)}
-                  className="w-full px-4 py-3 bg-gray-50 dark:bg-gray-800 border border-black dark:border-white focus:ring-0 focus:outline-none focus:border-black transition-all text-black dark:text-white"
-                />
-              </div>
-              
-              <div>
-                <label className="block text-sm font-bold text-black dark:text-white mb-1 uppercase tracking-wider">What did you do?</label>
-                <textarea
-                  required rows={5} value={editContent} onChange={(e) => setEditContent(e.target.value)}
-                  className="w-full px-4 py-3 bg-gray-50 dark:bg-gray-800 border border-black dark:border-white focus:ring-0 focus:outline-none focus:border-black transition-all text-black dark:text-white"
-                />
-              </div>
-
-              <div className="flex space-x-4 pt-2">
-                <button type="submit" disabled={loading} className="flex-1 bg-black dark:bg-white hover:bg-gray-800 dark:hover:bg-gray-200 text-white dark:text-black font-bold py-3 uppercase transition-colors">
-                  {loading ? "Saving..." : "Save Changes"}
-                </button>
-                <button type="button" onClick={() => setEditingBlog(null)} className="flex-1 bg-gray-200 dark:bg-gray-800 hover:bg-gray-300 dark:hover:bg-gray-700 text-black dark:text-white font-bold py-3 uppercase transition-colors">
-                  Cancel
-                </button>
-              </div>
-            </form>
-          </div>
-        </div>
-      )}
-
-      {/* Delete Confirmation Modal */}
-      {deletingId !== null && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm p-4">
-          <div className="bg-white dark:bg-gray-900 border-2 border-black dark:border-white p-6 w-full max-w-md shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] dark:shadow-[8px_8px_0px_0px_rgba(255,255,255,1)]">
-            <h2 className="text-xl font-bold uppercase tracking-wider text-black dark:text-white mb-4">Confirm Deletion</h2>
-            <p className="text-gray-700 dark:text-gray-300 mb-6">Are you sure you want to delete this log? This action cannot be undone.</p>
-            <div className="flex space-x-4">
-              <button onClick={handleDelete} disabled={loading} className="flex-1 bg-red-600 hover:bg-red-700 text-white font-bold py-3 uppercase transition-colors">
-                {loading ? "Deleting..." : "Delete"}
-              </button>
-              <button onClick={() => setDeletingId(null)} className="flex-1 bg-gray-200 dark:bg-gray-800 hover:bg-gray-300 dark:hover:bg-gray-700 text-black dark:text-white font-bold py-3 uppercase transition-colors">
-                Cancel
-              </button>
-            </div>
-          </div>
-        </div>
-      )}
-
-      <div className="mb-10">
-        <h1 className="text-4xl font-bold tracking-tight text-black dark:text-white mb-2">Daily Log</h1>
-        <p className="text-gray-500 dark:text-gray-400 text-lg">Record your daily learning, project tasks, and updates.</p>
+    <div className="space-y-8">
+      {/* Header */}
+      <div>
+        <h1 className="text-3xl font-bold text-gray-900 dark:text-white mb-2">
+          Welcome back to SS LEARNING! 👋
+        </h1>
+        <p className="text-gray-600 dark:text-gray-400">
+          Here's what's happening with your learning platform today.
+        </p>
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
-        {/* Left Side: Create Update Form */}
-        <div className="lg:col-span-5">
-          <div className="bg-white dark:bg-gray-900 p-6 rounded-none border-2 border-black dark:border-white shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] dark:shadow-[4px_4px_0px_0px_rgba(255,255,255,1)] transition-colors duration-200 sticky top-8">
-            <h2 className="text-xl font-bold mb-6 text-black dark:text-white uppercase tracking-wide border-b-2 border-black dark:border-white pb-2">New Update</h2>
-
-            <form onSubmit={handleSubmit} className="space-y-5">
-              <div>
-                <label className="block text-sm font-bold text-black dark:text-white mb-1 uppercase tracking-wider">Project / Task Title</label>
-                <input
-                  type="text" required value={title} onChange={(e) => setTitle(e.target.value)}
-                  className="w-full px-4 py-3 bg-gray-50 dark:bg-gray-800 border border-black dark:border-white focus:ring-0 focus:outline-none focus:border-black transition-all text-black dark:text-white"
-                  placeholder="e.g. Set up Next.js Sidebar"
-                />
+      {/* Stats Grid */}
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        {statsCards.map((stat) => {
+          const Icon = stat.icon;
+          return (
+            <Link
+              key={stat.title}
+              href={stat.href}
+              className="group relative overflow-hidden bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-1"
+            >
+              <div className={`absolute top-0 right-0 w-32 h-32 bg-gradient-to-br ${stat.color} opacity-10 rounded-full -mr-16 -mt-16`}></div>
+              
+              <div className="relative">
+                <div className="flex items-center justify-between mb-4">
+                  <div className={`w-12 h-12 bg-gradient-to-br ${stat.color} rounded-xl flex items-center justify-center shadow-lg`}>
+                    <Icon className="w-6 h-6 text-white" />
+                  </div>
+                  <span className="text-sm font-semibold text-green-600 dark:text-green-400">
+                    {stat.change}
+                  </span>
+                </div>
+                
+                <h3 className="text-gray-600 dark:text-gray-400 text-sm font-medium mb-1">
+                  {stat.title}
+                </h3>
+                <p className="text-3xl font-bold text-gray-900 dark:text-white">
+                  {stat.value}
+                </p>
               </div>
 
-              <div>
-                <label className="block text-sm font-bold text-black dark:text-white mb-1 uppercase tracking-wider">What did you do?</label>
-                <textarea
-                  required rows={5} value={content} onChange={(e) => setContent(e.target.value)}
-                  className="w-full px-4 py-3 bg-gray-50 dark:bg-gray-800 border border-black dark:border-white focus:ring-0 focus:outline-none focus:border-black transition-all text-black dark:text-white"
-                  placeholder="Describe your progress, challenges, or learnings..."
-                />
+              <div className="absolute bottom-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity">
+                <ArrowRight className="w-5 h-5 text-gray-400" />
               </div>
-              {error && <p className="text-red-600 dark:text-red-400 font-medium text-sm">{error}</p>}
+            </Link>
+          );
+        })}
+      </div>
 
-              <button
-                type="submit" disabled={loading}
-                className="w-full bg-black dark:bg-white hover:bg-gray-800 text-white dark:text-black font-bold py-3 px-4 uppercase tracking-wider transition-colors disabled:opacity-50 border-2 border-transparent dark:border-white"
-              >
-                {loading ? "Saving..." : "Log Update"}
-              </button>
-            </form>
+      {/* Quick Actions & Recent Activity */}
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+        {/* Quick Actions */}
+        <div className="bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-lg">
+          <h2 className="text-xl font-bold text-gray-900 dark:text-white mb-4">
+            Quick Actions
+          </h2>
+          <div className="space-y-3">
+            <Link
+              href="/tasks"
+              className="flex items-center justify-between p-4 bg-gradient-to-r from-blue-50 to-blue-100 dark:from-blue-900/20 dark:to-blue-800/20 rounded-xl hover:shadow-md transition-all group"
+            >
+              <div className="flex items-center gap-3">
+                <div className="w-10 h-10 bg-blue-500 rounded-lg flex items-center justify-center">
+                  <ClipboardList className="w-5 h-5 text-white" />
+                </div>
+                <span className="font-medium text-gray-900 dark:text-white">Manage Tasks</span>
+              </div>
+              <ArrowRight className="w-5 h-5 text-gray-400 group-hover:translate-x-1 transition-transform" />
+            </Link>
+
+            <Link
+              href="/courses"
+              className="flex items-center justify-between p-4 bg-gradient-to-r from-purple-50 to-purple-100 dark:from-purple-900/20 dark:to-purple-800/20 rounded-xl hover:shadow-md transition-all group"
+            >
+              <div className="flex items-center gap-3">
+                <div className="w-10 h-10 bg-purple-500 rounded-lg flex items-center justify-center">
+                  <BookOpen className="w-5 h-5 text-white" />
+                </div>
+                <span className="font-medium text-gray-900 dark:text-white">View Courses</span>
+              </div>
+              <ArrowRight className="w-5 h-5 text-gray-400 group-hover:translate-x-1 transition-transform" />
+            </Link>
+
+            <Link
+              href="/users"
+              className="flex items-center justify-between p-4 bg-gradient-to-r from-green-50 to-green-100 dark:from-green-900/20 dark:to-green-800/20 rounded-xl hover:shadow-md transition-all group"
+            >
+              <div className="flex items-center gap-3">
+                <div className="w-10 h-10 bg-green-500 rounded-lg flex items-center justify-center">
+                  <Users className="w-5 h-5 text-white" />
+                </div>
+                <span className="font-medium text-gray-900 dark:text-white">Manage Users</span>
+              </div>
+              <ArrowRight className="w-5 h-5 text-gray-400 group-hover:translate-x-1 transition-transform" />
+            </Link>
           </div>
         </div>
 
-        {/* Right Side: Display Logs List (Grouped by Date) */}
-        <div className="lg:col-span-7 bg-slate-100 dark:bg-gray-900/50 p-8 border border-gray-200 dark:border-gray-800 transition-colors duration-200">
-          <h2 className="text-xl font-bold text-black dark:text-white uppercase tracking-wide border-b-2 border-black dark:border-white pb-2 mb-8">Timeline</h2>
-
-          <div className="space-y-12">
-            {Object.keys(groupedBlogs).length === 0 ? (
-              <p className="text-gray-500 dark:text-gray-400 italic">No updates logged yet. Start by writing your first entry!</p>
+        {/* Recent Activity */}
+        <div className="bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-lg">
+          <h2 className="text-xl font-bold text-gray-900 dark:text-white mb-4">
+            Recent Tasks
+          </h2>
+          <div className="space-y-4">
+            {recentTasks.length === 0 ? (
+              <p className="text-gray-500 dark:text-gray-400 text-center py-8">
+                No tasks yet. Create your first task!
+              </p>
             ) : (
-              Object.keys(groupedBlogs).map((date) => (
-                <div key={date} className="relative">
-                  {/* Date Header */}
-                  <div className="sticky top-0 z-10 bg-slate-100 dark:bg-gray-900/90 backdrop-blur py-2 mb-4">
-                    <h3 className="inline-block bg-black dark:bg-white text-white dark:text-black px-4 py-1 text-sm font-bold uppercase tracking-widest shadow-sm">
-                      {date}
-                    </h3>
+              recentTasks.map((task) => {
+                const statusInfo = getStatusIcon(task.status);
+                const Icon = statusInfo.icon;
+                return (
+                  <div key={task.id} className="flex items-start gap-3 p-3 hover:bg-gray-50 dark:hover:bg-gray-700/50 rounded-xl transition-colors">
+                    <Icon className={`w-5 h-5 mt-0.5 ${statusInfo.color}`} />
+                    <div className="flex-1">
+                      <p className="text-sm font-medium text-gray-900 dark:text-white">
+                        {task.title}
+                      </p>
+                      <p className="text-xs text-gray-500 dark:text-gray-400 mt-1">
+                        {getTimeAgo(task.createdAt)}
+                      </p>
+                    </div>
+                    <span className={`text-xs px-2 py-1 rounded-full font-semibold ${
+                      task.status === 'completed' ? 'bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-400' :
+                      task.status === 'in-progress' ? 'bg-blue-100 text-blue-700 dark:bg-blue-900/30 dark:text-blue-400' :
+                      'bg-orange-100 text-orange-700 dark:bg-orange-900/30 dark:text-orange-400'
+                    }`}>
+                      {task.status}
+                    </span>
                   </div>
-
-                  {/* Tasks for this date */}
-                  <div className="space-y-6 pl-4 border-l-2 border-black dark:border-white ml-2">
-                    {groupedBlogs[date].map((blog) => (
-                      <div key={blog.id} className="bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-700 p-6 relative shadow-sm hover:shadow-md transition-all group">
-                        <div className="absolute top-4 -left-[21px] w-2 h-2 rounded-full bg-black dark:bg-white ring-4 ring-slate-100 dark:ring-gray-900"></div>
-
-                        <div className="flex justify-between items-start mb-4">
-                          <h4 className="font-bold text-xl text-black dark:text-white pr-16">{blog.title}</h4>
-                          
-                          {/* Action Buttons (Edit/Delete) */}
-                          <div className="absolute top-4 right-4 flex space-x-2 opacity-0 group-hover:opacity-100 transition-opacity">
-                            <button onClick={() => openEditModal(blog)} className="p-2 text-gray-500 hover:text-blue-600 dark:hover:text-blue-400 bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600 rounded transition-colors" title="Edit">
-                              <Edit2 className="w-4 h-4" />
-                            </button>
-                            <button onClick={() => setDeletingId(blog.id)} className="p-2 text-gray-500 hover:text-red-600 dark:hover:text-red-400 bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600 rounded transition-colors" title="Delete">
-                              <Trash2 className="w-4 h-4" />
-                            </button>
-                          </div>
-                        </div>
-
-                        <p className="text-gray-700 dark:text-gray-300 whitespace-pre-wrap leading-relaxed">{blog.content}</p>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              ))
+                );
+              })
             )}
           </div>
+        </div>
+      </div>
+
+      {/* Info Banner */}
+      <div className="bg-gradient-to-r from-indigo-500 to-purple-600 rounded-2xl p-6 shadow-lg">
+        <div className="flex items-center justify-between">
+          <div>
+            <h3 className="text-xl font-bold text-white mb-2">
+              Ready to manage your platform?
+            </h3>
+            <p className="text-indigo-100">
+              You have {stats.totalTasks} tasks total. {stats.completedTasks} completed, {stats.inProgressTasks} in progress, and {stats.pendingTasks} pending.
+            </p>
+          </div>
+          <TrendingUp className="w-16 h-16 text-white/20" />
         </div>
       </div>
     </div>

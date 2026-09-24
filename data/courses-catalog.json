@@ -1,0 +1,1118 @@
+{
+  "updatedAt": "2026-09-24",
+  "description": "Curated public YouTube video catalog. At least ten distinct videos in each category; programming includes language courses and requested technologies. Not an exhaustive catalog or a live view-count ranking. Availability and embedding permissions may change.",
+  "categories": [
+    {
+      "id": "programming",
+      "name": "Programming"
+    },
+    {
+      "id": "web-development",
+      "name": "Web Development"
+    },
+    {
+      "id": "software-engineering",
+      "name": "Software Engineering"
+    },
+    {
+      "id": "data-ai",
+      "name": "Data and AI"
+    },
+    {
+      "id": "cybersecurity",
+      "name": "Cybersecurity"
+    },
+    {
+      "id": "study-skills",
+      "name": "Study Skills"
+    },
+    {
+      "id": "psychology",
+      "name": "Psychology"
+    },
+    {
+      "id": "personal-finance",
+      "name": "Personal Finance"
+    },
+    {
+      "id": "communication",
+      "name": "Communication"
+    },
+    {
+      "id": "critical-thinking",
+      "name": "Critical Thinking"
+    }
+  ],
+  "courses": [
+    {
+      "id": "programming-01",
+      "title": "Learn Python - Full Course for Beginners",
+      "categoryId": "programming",
+      "topic": "Python",
+      "language": "en",
+      "resourceType": "video",
+      "youtubeId": "rfscVS0vtbw",
+      "youtubeUrl": "https://www.youtube.com/watch?v=rfscVS0vtbw"
+    },
+    {
+      "id": "programming-02",
+      "title": "Learn JavaScript - Full Course for Beginners",
+      "categoryId": "programming",
+      "topic": "JavaScript",
+      "language": "en",
+      "resourceType": "video",
+      "youtubeId": "PkZNo7MFNFg",
+      "youtubeUrl": "https://www.youtube.com/watch?v=PkZNo7MFNFg"
+    },
+    {
+      "id": "programming-03",
+      "title": "Learn TypeScript - Full Tutorial",
+      "categoryId": "programming",
+      "topic": "TypeScript",
+      "language": "en",
+      "resourceType": "video",
+      "youtubeId": "30LWjhZzg50",
+      "youtubeUrl": "https://www.youtube.com/watch?v=30LWjhZzg50"
+    },
+    {
+      "id": "programming-04",
+      "title": "Java Full Course for Beginners",
+      "categoryId": "programming",
+      "topic": "Java",
+      "language": "en",
+      "resourceType": "video",
+      "youtubeId": "eIrMbAQSU34",
+      "youtubeUrl": "https://www.youtube.com/watch?v=eIrMbAQSU34"
+    },
+    {
+      "id": "programming-05",
+      "title": "C Programming Tutorial for Beginners",
+      "categoryId": "programming",
+      "topic": "C",
+      "language": "en",
+      "resourceType": "video",
+      "youtubeId": "KJgsSFOSQv0",
+      "youtubeUrl": "https://www.youtube.com/watch?v=KJgsSFOSQv0"
+    },
+    {
+      "id": "programming-06",
+      "title": "C++ Tutorial for Beginners - Full Course",
+      "categoryId": "programming",
+      "topic": "C++",
+      "language": "en",
+      "resourceType": "video",
+      "youtubeId": "vLnPwxZdW4Y",
+      "youtubeUrl": "https://www.youtube.com/watch?v=vLnPwxZdW4Y"
+    },
+    {
+      "id": "programming-07",
+      "title": "Go Programming - Golang Course with Projects",
+      "categoryId": "programming",
+      "topic": "Go",
+      "language": "en",
+      "resourceType": "video",
+      "youtubeId": "un6ZyFkqFKo",
+      "youtubeUrl": "https://www.youtube.com/watch?v=un6ZyFkqFKo"
+    },
+    {
+      "id": "programming-08",
+      "title": "Learn Rust Programming - Complete Course",
+      "categoryId": "programming",
+      "topic": "Rust",
+      "language": "en",
+      "resourceType": "video",
+      "youtubeId": "BpPEoZW5IiY",
+      "youtubeUrl": "https://www.youtube.com/watch?v=BpPEoZW5IiY"
+    },
+    {
+      "id": "programming-09",
+      "title": "Swift Programming Tutorial - Full Course for Beginners",
+      "categoryId": "programming",
+      "topic": "Swift",
+      "language": "en",
+      "resourceType": "video",
+      "youtubeId": "8Xg7E9shq0U",
+      "youtubeUrl": "https://www.youtube.com/watch?v=8Xg7E9shq0U"
+    },
+    {
+      "id": "programming-10",
+      "title": "C# Tutorial - Full Course for Beginners",
+      "categoryId": "programming",
+      "topic": "C#",
+      "language": "en",
+      "resourceType": "video",
+      "youtubeId": "GhQdlIFylQ8",
+      "youtubeUrl": "https://www.youtube.com/watch?v=GhQdlIFylQ8"
+    },
+    {
+      "id": "programming-11",
+      "title": "React Course - Beginner's Tutorial",
+      "categoryId": "programming",
+      "topic": "React",
+      "language": "en",
+      "resourceType": "video",
+      "youtubeId": "bMknfKXIFA8",
+      "youtubeUrl": "https://www.youtube.com/watch?v=bMknfKXIFA8"
+    },
+    {
+      "id": "programming-12",
+      "title": "Next.js for Beginners - Full Course",
+      "categoryId": "programming",
+      "topic": "Next.js",
+      "language": "en",
+      "resourceType": "video",
+      "youtubeId": "1WmNXEVia8I",
+      "youtubeUrl": "https://www.youtube.com/watch?v=1WmNXEVia8I"
+    },
+    {
+      "id": "programming-13",
+      "title": "Learn MongoDB in 1 Hour",
+      "categoryId": "programming",
+      "topic": "MongoDB",
+      "language": "en",
+      "resourceType": "video",
+      "youtubeId": "c2M-rlkkT5o",
+      "youtubeUrl": "https://www.youtube.com/watch?v=c2M-rlkkT5o"
+    },
+    {
+      "id": "programming-14",
+      "title": "Prisma ORM Full Course 2025",
+      "categoryId": "programming",
+      "topic": "Prisma",
+      "language": "en",
+      "resourceType": "video",
+      "youtubeId": "gimSKEsWYb4",
+      "youtubeUrl": "https://www.youtube.com/watch?v=gimSKEsWYb4"
+    },
+    {
+      "id": "programming-15",
+      "title": "Learn HTML - Full Tutorial for Beginners",
+      "categoryId": "programming",
+      "topic": "HTML",
+      "language": "en",
+      "resourceType": "video",
+      "youtubeId": "kUMe1FH4CHE",
+      "youtubeUrl": "https://www.youtube.com/watch?v=kUMe1FH4CHE"
+    },
+    {
+      "id": "programming-16",
+      "title": "Full Stack Web Development for Beginners",
+      "categoryId": "programming",
+      "topic": "Full Stack",
+      "language": "en",
+      "resourceType": "video",
+      "youtubeId": "nu_pCVPKzTk",
+      "youtubeUrl": "https://www.youtube.com/watch?v=nu_pCVPKzTk"
+    },
+    {
+      "id": "programming-17",
+      "title": "MERN Stack Tutorial with Deployment",
+      "categoryId": "programming",
+      "topic": "MERN Stack",
+      "language": "en",
+      "resourceType": "video",
+      "youtubeId": "O3BUHwfHf84",
+      "youtubeUrl": "https://www.youtube.com/watch?v=O3BUHwfHf84"
+    },
+    {
+      "id": "web-development-01",
+      "title": "Learn HTML and CSS - Full Course for Beginners",
+      "categoryId": "web-development",
+      "topic": "HTML/CSS",
+      "language": "en",
+      "resourceType": "video",
+      "youtubeId": "a_iQb1lnAEQ",
+      "youtubeUrl": "https://www.youtube.com/watch?v=a_iQb1lnAEQ"
+    },
+    {
+      "id": "web-development-02",
+      "title": "HTML and CSS Full Course",
+      "categoryId": "web-development",
+      "topic": "HTML/CSS",
+      "language": "en",
+      "resourceType": "video",
+      "youtubeId": "HGTJBPNC-Gw",
+      "youtubeUrl": "https://www.youtube.com/watch?v=HGTJBPNC-Gw"
+    },
+    {
+      "id": "web-development-03",
+      "title": "JavaScript Tutorial Full Course - Beginner to Pro",
+      "categoryId": "web-development",
+      "topic": "JavaScript",
+      "language": "en",
+      "resourceType": "video",
+      "youtubeId": "EerdGm-ehJQ",
+      "youtubeUrl": "https://www.youtube.com/watch?v=EerdGm-ehJQ"
+    },
+    {
+      "id": "web-development-04",
+      "title": "React Tutorial Full Course - Beginner to Pro",
+      "categoryId": "web-development",
+      "topic": "React",
+      "language": "en",
+      "resourceType": "video",
+      "youtubeId": "TtPXvEcE11E",
+      "youtubeUrl": "https://www.youtube.com/watch?v=TtPXvEcE11E"
+    },
+    {
+      "id": "web-development-05",
+      "title": "Learn React JS - Full Beginner's Tutorial and Projects",
+      "categoryId": "web-development",
+      "topic": "React",
+      "language": "en",
+      "resourceType": "video",
+      "youtubeId": "x4rFhThSX04",
+      "youtubeUrl": "https://www.youtube.com/watch?v=x4rFhThSX04"
+    },
+    {
+      "id": "web-development-06",
+      "title": "Node.js and Express.js - Full Course",
+      "categoryId": "web-development",
+      "topic": "Node.js/Express",
+      "language": "en",
+      "resourceType": "video",
+      "youtubeId": "Oe421EPjeBE",
+      "youtubeUrl": "https://www.youtube.com/watch?v=Oe421EPjeBE"
+    },
+    {
+      "id": "web-development-07",
+      "title": "MERN Stack Full Tutorial and Project",
+      "categoryId": "web-development",
+      "topic": "MERN",
+      "language": "en",
+      "resourceType": "video",
+      "youtubeId": "CvCiNeLnZ00",
+      "youtubeUrl": "https://www.youtube.com/watch?v=CvCiNeLnZ00"
+    },
+    {
+      "id": "web-development-08",
+      "title": "Build a Full Stack Book Store App Using React Node MongoDB",
+      "categoryId": "web-development",
+      "topic": "MongoDB/React",
+      "language": "en",
+      "resourceType": "video",
+      "youtubeId": "pgw2KPfgK1E",
+      "youtubeUrl": "https://www.youtube.com/watch?v=pgw2KPfgK1E"
+    },
+    {
+      "id": "web-development-09",
+      "title": "Prisma Crash Course",
+      "categoryId": "web-development",
+      "topic": "Prisma",
+      "language": "en",
+      "resourceType": "video",
+      "youtubeId": "CYH04BJzamo",
+      "youtubeUrl": "https://www.youtube.com/watch?v=CYH04BJzamo"
+    },
+    {
+      "id": "web-development-10",
+      "title": "Next.js and Prisma - Working with Databases",
+      "categoryId": "web-development",
+      "topic": "Next.js/Prisma",
+      "language": "en",
+      "resourceType": "video",
+      "youtubeId": "QXxy8Uv1LnQ",
+      "youtubeUrl": "https://www.youtube.com/watch?v=QXxy8Uv1LnQ"
+    },
+    {
+      "id": "software-engineering-01",
+      "title": "Git and GitHub for Beginners - Crash Course",
+      "categoryId": "software-engineering",
+      "topic": "Git",
+      "language": "en",
+      "resourceType": "video",
+      "youtubeId": "RGOj5yH7evk",
+      "youtubeUrl": "https://www.youtube.com/watch?v=RGOj5yH7evk"
+    },
+    {
+      "id": "software-engineering-02",
+      "title": "Learn Git - Full Course for Beginners",
+      "categoryId": "software-engineering",
+      "topic": "Git",
+      "language": "en",
+      "resourceType": "video",
+      "youtubeId": "zTjRZNkhiEU",
+      "youtubeUrl": "https://www.youtube.com/watch?v=zTjRZNkhiEU"
+    },
+    {
+      "id": "software-engineering-03",
+      "title": "Algorithms and Data Structures Tutorial - Full Course",
+      "categoryId": "software-engineering",
+      "topic": "Algorithms",
+      "language": "en",
+      "resourceType": "video",
+      "youtubeId": "8hly31xKli0",
+      "youtubeUrl": "https://www.youtube.com/watch?v=8hly31xKli0"
+    },
+    {
+      "id": "software-engineering-04",
+      "title": "Data Structures - Full Course Using C and C++",
+      "categoryId": "software-engineering",
+      "topic": "Data Structures",
+      "language": "en",
+      "resourceType": "video",
+      "youtubeId": "B31LgI4Y4DQ",
+      "youtubeUrl": "https://www.youtube.com/watch?v=B31LgI4Y4DQ"
+    },
+    {
+      "id": "software-engineering-05",
+      "title": "Docker and Kubernetes - Full Course for Beginners",
+      "categoryId": "software-engineering",
+      "topic": "DevOps",
+      "language": "en",
+      "resourceType": "video",
+      "youtubeId": "Wf2eSG3owoA",
+      "youtubeUrl": "https://www.youtube.com/watch?v=Wf2eSG3owoA"
+    },
+    {
+      "id": "software-engineering-06",
+      "title": "Learn Kubernetes in 6 Hours",
+      "categoryId": "software-engineering",
+      "topic": "Kubernetes",
+      "language": "en",
+      "resourceType": "video",
+      "youtubeId": "_4uQI4ihGVU",
+      "youtubeUrl": "https://www.youtube.com/watch?v=_4uQI4ihGVU"
+    },
+    {
+      "id": "software-engineering-07",
+      "title": "Software Testing Course - Playwright and E2E",
+      "categoryId": "software-engineering",
+      "topic": "Testing",
+      "language": "en",
+      "resourceType": "video",
+      "youtubeId": "jydYq7oAtD8",
+      "youtubeUrl": "https://www.youtube.com/watch?v=jydYq7oAtD8"
+    },
+    {
+      "id": "software-engineering-08",
+      "title": "React Testing Course for Beginners",
+      "categoryId": "software-engineering",
+      "topic": "Testing",
+      "language": "en",
+      "resourceType": "video",
+      "youtubeId": "8vfQ6SWBZ-U",
+      "youtubeUrl": "https://www.youtube.com/watch?v=8vfQ6SWBZ-U"
+    },
+    {
+      "id": "software-engineering-09",
+      "title": "AWS Certified Cloud Practitioner Course",
+      "categoryId": "software-engineering",
+      "topic": "Cloud",
+      "language": "en",
+      "resourceType": "video",
+      "youtubeId": "NhDYbskXRgc",
+      "youtubeUrl": "https://www.youtube.com/watch?v=NhDYbskXRgc"
+    },
+    {
+      "id": "software-engineering-10",
+      "title": "Kubernetes Course - Full Beginners Tutorial",
+      "categoryId": "software-engineering",
+      "topic": "Kubernetes",
+      "language": "en",
+      "resourceType": "video",
+      "youtubeId": "d6WC5n9G_sM",
+      "youtubeUrl": "https://www.youtube.com/watch?v=d6WC5n9G_sM"
+    },
+    {
+      "id": "data-ai-01",
+      "title": "SQL Tutorial - Full Database Course for Beginners",
+      "categoryId": "data-ai",
+      "topic": "SQL",
+      "language": "en",
+      "resourceType": "video",
+      "youtubeId": "HXV3zeQKqGY",
+      "youtubeUrl": "https://www.youtube.com/watch?v=HXV3zeQKqGY"
+    },
+    {
+      "id": "data-ai-02",
+      "title": "Machine Learning for Everybody - Full Course",
+      "categoryId": "data-ai",
+      "topic": "Machine Learning",
+      "language": "en",
+      "resourceType": "video",
+      "youtubeId": "i_LwzRVP7bg",
+      "youtubeUrl": "https://www.youtube.com/watch?v=i_LwzRVP7bg"
+    },
+    {
+      "id": "data-ai-03",
+      "title": "Learn Python for Data Science - Full Course",
+      "categoryId": "data-ai",
+      "topic": "Python/Data",
+      "language": "en",
+      "resourceType": "video",
+      "youtubeId": "CMEWVn1uZpQ",
+      "youtubeUrl": "https://www.youtube.com/watch?v=CMEWVn1uZpQ"
+    },
+    {
+      "id": "data-ai-04",
+      "title": "Statistics - A Full University Course",
+      "categoryId": "data-ai",
+      "topic": "Statistics",
+      "language": "en",
+      "resourceType": "video",
+      "youtubeId": "xxpc-HPKN28",
+      "youtubeUrl": "https://www.youtube.com/watch?v=xxpc-HPKN28"
+    },
+    {
+      "id": "data-ai-05",
+      "title": "Learn Data Science Tutorial - Full Course",
+      "categoryId": "data-ai",
+      "topic": "Data Science",
+      "language": "en",
+      "resourceType": "video",
+      "youtubeId": "ua-CiDNNj30",
+      "youtubeUrl": "https://www.youtube.com/watch?v=ua-CiDNNj30"
+    },
+    {
+      "id": "data-ai-06",
+      "title": "Machine Learning Course for Beginners",
+      "categoryId": "data-ai",
+      "topic": "Machine Learning",
+      "language": "en",
+      "resourceType": "video",
+      "youtubeId": "NWONeJKn6kc",
+      "youtubeUrl": "https://www.youtube.com/watch?v=NWONeJKn6kc"
+    },
+    {
+      "id": "data-ai-07",
+      "title": "PyTorch for Deep Learning and Machine Learning",
+      "categoryId": "data-ai",
+      "topic": "Deep Learning",
+      "language": "en",
+      "resourceType": "video",
+      "youtubeId": "V_xro1bcAuA",
+      "youtubeUrl": "https://www.youtube.com/watch?v=V_xro1bcAuA"
+    },
+    {
+      "id": "data-ai-08",
+      "title": "Machine Learning with Python and Scikit-Learn",
+      "categoryId": "data-ai",
+      "topic": "Scikit-Learn",
+      "language": "en",
+      "resourceType": "video",
+      "youtubeId": "hDKCxebp88A",
+      "youtubeUrl": "https://www.youtube.com/watch?v=hDKCxebp88A"
+    },
+    {
+      "id": "data-ai-09",
+      "title": "Scikit-learn Crash Course",
+      "categoryId": "data-ai",
+      "topic": "Scikit-Learn",
+      "language": "en",
+      "resourceType": "video",
+      "youtubeId": "0B5eIE_1vpU",
+      "youtubeUrl": "https://www.youtube.com/watch?v=0B5eIE_1vpU"
+    },
+    {
+      "id": "data-ai-10",
+      "title": "Build 12 Data Science Apps with Python and Streamlit",
+      "categoryId": "data-ai",
+      "topic": "Data Apps",
+      "language": "en",
+      "resourceType": "video",
+      "youtubeId": "JwSS70SZdyM",
+      "youtubeUrl": "https://www.youtube.com/watch?v=JwSS70SZdyM"
+    },
+    {
+      "id": "cybersecurity-01",
+      "title": "Harvard CS50's Introduction to Cybersecurity",
+      "categoryId": "cybersecurity",
+      "topic": "Cybersecurity",
+      "language": "en",
+      "resourceType": "video",
+      "youtubeId": "9HOpanT0GRs",
+      "youtubeUrl": "https://www.youtube.com/watch?v=9HOpanT0GRs"
+    },
+    {
+      "id": "cybersecurity-02",
+      "title": "Hands-On Cybersecurity and Ethical Hacking",
+      "categoryId": "cybersecurity",
+      "topic": "Ethical Hacking",
+      "language": "en",
+      "resourceType": "video",
+      "youtubeId": "ug8W0sFiVJo",
+      "youtubeUrl": "https://www.youtube.com/watch?v=ug8W0sFiVJo"
+    },
+    {
+      "id": "cybersecurity-03",
+      "title": "Full Ethical Hacking Course - Network Penetration Testing",
+      "categoryId": "cybersecurity",
+      "topic": "Penetration Testing",
+      "language": "en",
+      "resourceType": "video",
+      "youtubeId": "3Kq1MIfTWCE",
+      "youtubeUrl": "https://www.youtube.com/watch?v=3Kq1MIfTWCE"
+    },
+    {
+      "id": "cybersecurity-04",
+      "title": "Ethical Hacking in 12 Hours - Full Course",
+      "categoryId": "cybersecurity",
+      "topic": "Ethical Hacking",
+      "language": "en",
+      "resourceType": "video",
+      "youtubeId": "fNzpcB7ODxQ",
+      "youtubeUrl": "https://www.youtube.com/watch?v=fNzpcB7ODxQ"
+    },
+    {
+      "id": "cybersecurity-05",
+      "title": "Linux Essentials for Ethical Hackers",
+      "categoryId": "cybersecurity",
+      "topic": "Linux",
+      "language": "en",
+      "resourceType": "video",
+      "youtubeId": "1hvVcEhcbLM",
+      "youtubeUrl": "https://www.youtube.com/watch?v=1hvVcEhcbLM"
+    },
+    {
+      "id": "cybersecurity-06",
+      "title": "Ethical Hacking 101 - Web App Penetration Testing",
+      "categoryId": "cybersecurity",
+      "topic": "Web Security",
+      "language": "en",
+      "resourceType": "video",
+      "youtubeId": "2_lswM1S264",
+      "youtubeUrl": "https://www.youtube.com/watch?v=2_lswM1S264"
+    },
+    {
+      "id": "cybersecurity-07",
+      "title": "Linux for Ethical Hackers - Kali Linux Tutorial",
+      "categoryId": "cybersecurity",
+      "topic": "Linux",
+      "language": "en",
+      "resourceType": "video",
+      "youtubeId": "lZAoFs75_cs",
+      "youtubeUrl": "https://www.youtube.com/watch?v=lZAoFs75_cs"
+    },
+    {
+      "id": "cybersecurity-08",
+      "title": "Google Cloud Cybersecurity Certificate Course",
+      "categoryId": "cybersecurity",
+      "topic": "Cloud Security",
+      "language": "en",
+      "resourceType": "video",
+      "youtubeId": "DrAZf4ZHqaM",
+      "youtubeUrl": "https://www.youtube.com/watch?v=DrAZf4ZHqaM"
+    },
+    {
+      "id": "cybersecurity-09",
+      "title": "Cyber Security Full Course for Beginners",
+      "categoryId": "cybersecurity",
+      "topic": "Cybersecurity",
+      "language": "en",
+      "resourceType": "video",
+      "youtubeId": "U_P23SqJaDc",
+      "youtubeUrl": "https://www.youtube.com/watch?v=U_P23SqJaDc"
+    },
+    {
+      "id": "cybersecurity-10",
+      "title": "Ethical Hacking Full Course 2026",
+      "categoryId": "cybersecurity",
+      "topic": "Cybersecurity",
+      "language": "en",
+      "resourceType": "video",
+      "youtubeId": "sZHDTaeWVto",
+      "youtubeUrl": "https://www.youtube.com/watch?v=sZHDTaeWVto"
+    },
+    {
+      "id": "study-skills-01",
+      "title": "Taking Notes - Crash Course Study Skills 1",
+      "categoryId": "study-skills",
+      "topic": "Taking Notes",
+      "language": "en",
+      "resourceType": "video",
+      "youtubeId": "E7CwqNHn_Ns",
+      "youtubeUrl": "https://www.youtube.com/watch?v=E7CwqNHn_Ns"
+    },
+    {
+      "id": "study-skills-02",
+      "title": "Reading Assignments - Crash Course Study Skills 2",
+      "categoryId": "study-skills",
+      "topic": "Reading",
+      "language": "en",
+      "resourceType": "video",
+      "youtubeId": "WAIUkjsZ5xQ",
+      "youtubeUrl": "https://www.youtube.com/watch?v=WAIUkjsZ5xQ"
+    },
+    {
+      "id": "study-skills-03",
+      "title": "Memory - Crash Course Study Skills 3",
+      "categoryId": "study-skills",
+      "topic": "Memory",
+      "language": "en",
+      "resourceType": "video",
+      "youtubeId": "SZbdK9e9bxs",
+      "youtubeUrl": "https://www.youtube.com/watch?v=SZbdK9e9bxs"
+    },
+    {
+      "id": "study-skills-04",
+      "title": "Planning and Organization - Crash Course Study Skills 4",
+      "categoryId": "study-skills",
+      "topic": "Planning",
+      "language": "en",
+      "resourceType": "video",
+      "youtubeId": "0AKAuRby7n8",
+      "youtubeUrl": "https://www.youtube.com/watch?v=0AKAuRby7n8"
+    },
+    {
+      "id": "study-skills-05",
+      "title": "Focus and Concentration - Crash Course Study Skills 5",
+      "categoryId": "study-skills",
+      "topic": "Focus",
+      "language": "en",
+      "resourceType": "video",
+      "youtubeId": "L_2JaFnkZ4o",
+      "youtubeUrl": "https://www.youtube.com/watch?v=L_2JaFnkZ4o"
+    },
+    {
+      "id": "study-skills-06",
+      "title": "Procrastination - Crash Course Study Skills 6",
+      "categoryId": "study-skills",
+      "topic": "Productivity",
+      "language": "en",
+      "resourceType": "video",
+      "youtubeId": "x2y_SLOvOvw",
+      "youtubeUrl": "https://www.youtube.com/watch?v=x2y_SLOvOvw"
+    },
+    {
+      "id": "study-skills-07",
+      "title": "Studying for Exams - Crash Course Study Skills 7",
+      "categoryId": "study-skills",
+      "topic": "Exams",
+      "language": "en",
+      "resourceType": "video",
+      "youtubeId": "mLhwdITTrfE",
+      "youtubeUrl": "https://www.youtube.com/watch?v=mLhwdITTrfE"
+    },
+    {
+      "id": "study-skills-08",
+      "title": "Test Anxiety - Crash Course Study Skills 8",
+      "categoryId": "study-skills",
+      "topic": "Exams",
+      "language": "en",
+      "resourceType": "video",
+      "youtubeId": "t-9cqaRJMP4",
+      "youtubeUrl": "https://www.youtube.com/watch?v=t-9cqaRJMP4"
+    },
+    {
+      "id": "study-skills-09",
+      "title": "Papers and Essays - Crash Course Study Skills 9",
+      "categoryId": "study-skills",
+      "topic": "Writing",
+      "language": "en",
+      "resourceType": "video",
+      "youtubeId": "KlgR1q3UQZE",
+      "youtubeUrl": "https://www.youtube.com/watch?v=KlgR1q3UQZE"
+    },
+    {
+      "id": "study-skills-10",
+      "title": "Exercise - Crash Course Study Skills 10",
+      "categoryId": "study-skills",
+      "topic": "Wellbeing",
+      "language": "en",
+      "resourceType": "video",
+      "youtubeId": "SQONLdb1gow",
+      "youtubeUrl": "https://www.youtube.com/watch?v=SQONLdb1gow"
+    },
+    {
+      "id": "psychology-01",
+      "title": "Intro to Psychology - Crash Course Psychology 1",
+      "categoryId": "psychology",
+      "topic": "Introduction",
+      "language": "en",
+      "resourceType": "video",
+      "youtubeId": "vo4pMVb0R6M",
+      "youtubeUrl": "https://www.youtube.com/watch?v=vo4pMVb0R6M"
+    },
+    {
+      "id": "psychology-02",
+      "title": "Psychological Research - Crash Course Psychology 2",
+      "categoryId": "psychology",
+      "topic": "Research",
+      "language": "en",
+      "resourceType": "video",
+      "youtubeId": "hFV71QPvX2I",
+      "youtubeUrl": "https://www.youtube.com/watch?v=hFV71QPvX2I"
+    },
+    {
+      "id": "psychology-03",
+      "title": "The Chemical Mind - Crash Course Psychology 3",
+      "categoryId": "psychology",
+      "topic": "Brain",
+      "language": "en",
+      "resourceType": "video",
+      "youtubeId": "W4N-7AlzK7s",
+      "youtubeUrl": "https://www.youtube.com/watch?v=W4N-7AlzK7s"
+    },
+    {
+      "id": "psychology-04",
+      "title": "Sensation and Perception - Crash Course Psychology 5",
+      "categoryId": "psychology",
+      "topic": "Perception",
+      "language": "en",
+      "resourceType": "video",
+      "youtubeId": "unWnZvXJH2o",
+      "youtubeUrl": "https://www.youtube.com/watch?v=unWnZvXJH2o"
+    },
+    {
+      "id": "psychology-05",
+      "title": "Consciousness - Crash Course Psychology 8",
+      "categoryId": "psychology",
+      "topic": "Consciousness",
+      "language": "en",
+      "resourceType": "video",
+      "youtubeId": "jReX7qKU2yc",
+      "youtubeUrl": "https://www.youtube.com/watch?v=jReX7qKU2yc"
+    },
+    {
+      "id": "psychology-06",
+      "title": "How to Train a Brain - Crash Course Psychology 11",
+      "categoryId": "psychology",
+      "topic": "Learning",
+      "language": "en",
+      "resourceType": "video",
+      "youtubeId": "qG2SwE_6uVM",
+      "youtubeUrl": "https://www.youtube.com/watch?v=qG2SwE_6uVM"
+    },
+    {
+      "id": "psychology-07",
+      "title": "The Bobo Beatdown - Crash Course Psychology 12",
+      "categoryId": "psychology",
+      "topic": "Learning",
+      "language": "en",
+      "resourceType": "video",
+      "youtubeId": "128Ts5r9NRE",
+      "youtubeUrl": "https://www.youtube.com/watch?v=128Ts5r9NRE"
+    },
+    {
+      "id": "psychology-08",
+      "title": "Remembering and Forgetting - Crash Course Psychology 14",
+      "categoryId": "psychology",
+      "topic": "Memory",
+      "language": "en",
+      "resourceType": "video",
+      "youtubeId": "HVWbrNls-Kw",
+      "youtubeUrl": "https://www.youtube.com/watch?v=HVWbrNls-Kw"
+    },
+    {
+      "id": "psychology-09",
+      "title": "Social Thinking - Crash Course Psychology 37",
+      "categoryId": "psychology",
+      "topic": "Social Psychology",
+      "language": "en",
+      "resourceType": "video",
+      "youtubeId": "h6HLDV0T5Q8",
+      "youtubeUrl": "https://www.youtube.com/watch?v=h6HLDV0T5Q8"
+    },
+    {
+      "id": "psychology-10",
+      "title": "Social Influence - Crash Course Psychology 38",
+      "categoryId": "psychology",
+      "topic": "Social Psychology",
+      "language": "en",
+      "resourceType": "video",
+      "youtubeId": "UGxGDdQnC1Y",
+      "youtubeUrl": "https://www.youtube.com/watch?v=UGxGDdQnC1Y"
+    },
+    {
+      "id": "personal-finance-01",
+      "title": "Welcome to Financial Literacy - Khan Academy",
+      "categoryId": "personal-finance",
+      "topic": "Introduction",
+      "language": "en",
+      "resourceType": "video",
+      "youtubeId": "Lys4EVugJmk",
+      "youtubeUrl": "https://www.youtube.com/watch?v=Lys4EVugJmk"
+    },
+    {
+      "id": "personal-finance-02",
+      "title": "Budgeting and the 50:30:20 Rule",
+      "categoryId": "personal-finance",
+      "topic": "Budgeting",
+      "language": "en",
+      "resourceType": "video",
+      "youtubeId": "LKxOamnP8J4",
+      "youtubeUrl": "https://www.youtube.com/watch?v=LKxOamnP8J4"
+    },
+    {
+      "id": "personal-finance-03",
+      "title": "Paying Yourself First",
+      "categoryId": "personal-finance",
+      "topic": "Saving",
+      "language": "en",
+      "resourceType": "video",
+      "youtubeId": "k-RTEIaYvAg",
+      "youtubeUrl": "https://www.youtube.com/watch?v=k-RTEIaYvAg"
+    },
+    {
+      "id": "personal-finance-04",
+      "title": "Why and How to Save",
+      "categoryId": "personal-finance",
+      "topic": "Saving",
+      "language": "en",
+      "resourceType": "video",
+      "youtubeId": "cnW_HDIBmz4",
+      "youtubeUrl": "https://www.youtube.com/watch?v=cnW_HDIBmz4"
+    },
+    {
+      "id": "personal-finance-05",
+      "title": "Debt Payoff",
+      "categoryId": "personal-finance",
+      "topic": "Debt",
+      "language": "en",
+      "resourceType": "video",
+      "youtubeId": "TZErzDOZc1k",
+      "youtubeUrl": "https://www.youtube.com/watch?v=TZErzDOZc1k"
+    },
+    {
+      "id": "personal-finance-06",
+      "title": "Debt Management",
+      "categoryId": "personal-finance",
+      "topic": "Debt",
+      "language": "en",
+      "resourceType": "video",
+      "youtubeId": "Ri0arQOegsc",
+      "youtubeUrl": "https://www.youtube.com/watch?v=Ri0arQOegsc"
+    },
+    {
+      "id": "personal-finance-07",
+      "title": "How Do I Invest?",
+      "categoryId": "personal-finance",
+      "topic": "Investing",
+      "language": "en",
+      "resourceType": "video",
+      "youtubeId": "ro3v84swtZ4",
+      "youtubeUrl": "https://www.youtube.com/watch?v=ro3v84swtZ4"
+    },
+    {
+      "id": "personal-finance-08",
+      "title": "How to Make Your Money Grow",
+      "categoryId": "personal-finance",
+      "topic": "Banking",
+      "language": "en",
+      "resourceType": "video",
+      "youtubeId": "qX5eHj0VQII",
+      "youtubeUrl": "https://www.youtube.com/watch?v=qX5eHj0VQII"
+    },
+    {
+      "id": "personal-finance-09",
+      "title": "Saving Enough for Retirement - Part 2",
+      "categoryId": "personal-finance",
+      "topic": "Retirement",
+      "language": "en",
+      "resourceType": "video",
+      "youtubeId": "FRKv9zpOFaM",
+      "youtubeUrl": "https://www.youtube.com/watch?v=FRKv9zpOFaM"
+    },
+    {
+      "id": "personal-finance-10",
+      "title": "Insurance Contracts - Khan Academy",
+      "categoryId": "personal-finance",
+      "topic": "Insurance",
+      "language": "en",
+      "resourceType": "video",
+      "youtubeId": "J-N82GxehJA",
+      "youtubeUrl": "https://www.youtube.com/watch?v=J-N82GxehJA"
+    },
+    {
+      "id": "communication-01",
+      "title": "How to Speak So That People Want to Listen - TED",
+      "categoryId": "communication",
+      "topic": "Speaking",
+      "language": "en",
+      "resourceType": "video",
+      "youtubeId": "eIho2S0ZahI",
+      "youtubeUrl": "https://www.youtube.com/watch?v=eIho2S0ZahI"
+    },
+    {
+      "id": "communication-02",
+      "title": "10 Ways to Have a Better Conversation - TED",
+      "categoryId": "communication",
+      "topic": "Conversation",
+      "language": "en",
+      "resourceType": "video",
+      "youtubeId": "R1vskiVDwl4",
+      "youtubeUrl": "https://www.youtube.com/watch?v=R1vskiVDwl4"
+    },
+    {
+      "id": "communication-03",
+      "title": "TED's Secret to Great Public Speaking",
+      "categoryId": "communication",
+      "topic": "Public Speaking",
+      "language": "en",
+      "resourceType": "video",
+      "youtubeId": "-FOCpMAww28",
+      "youtubeUrl": "https://www.youtube.com/watch?v=-FOCpMAww28"
+    },
+    {
+      "id": "communication-04",
+      "title": "5 Ways to Listen Better - TED",
+      "categoryId": "communication",
+      "topic": "Listening",
+      "language": "en",
+      "resourceType": "video",
+      "youtubeId": "cSohjlYQI2A",
+      "youtubeUrl": "https://www.youtube.com/watch?v=cSohjlYQI2A"
+    },
+    {
+      "id": "communication-05",
+      "title": "Your Body Language May Shape Who You Are - TED",
+      "categoryId": "communication",
+      "topic": "Body Language",
+      "language": "en",
+      "resourceType": "video",
+      "youtubeId": "Ks-_Mh1QhMc",
+      "youtubeUrl": "https://www.youtube.com/watch?v=Ks-_Mh1QhMc"
+    },
+    {
+      "id": "communication-06",
+      "title": "The Secret to Giving Great Feedback - TED",
+      "categoryId": "communication",
+      "topic": "Feedback",
+      "language": "en",
+      "resourceType": "video",
+      "youtubeId": "wtl5UrrgU8c",
+      "youtubeUrl": "https://www.youtube.com/watch?v=wtl5UrrgU8c"
+    },
+    {
+      "id": "communication-07",
+      "title": "How to Disagree Productively and Find Common Ground - TED",
+      "categoryId": "communication",
+      "topic": "Discussion",
+      "language": "en",
+      "resourceType": "video",
+      "youtubeId": "phgjouv0BUA",
+      "youtubeUrl": "https://www.youtube.com/watch?v=phgjouv0BUA"
+    },
+    {
+      "id": "communication-08",
+      "title": "The Power of Vulnerability - TED",
+      "categoryId": "communication",
+      "topic": "Connection",
+      "language": "en",
+      "resourceType": "video",
+      "youtubeId": "iCvmsMzlF7o",
+      "youtubeUrl": "https://www.youtube.com/watch?v=iCvmsMzlF7o"
+    },
+    {
+      "id": "communication-09",
+      "title": "The Power of Introverts - TED",
+      "categoryId": "communication",
+      "topic": "Communication",
+      "language": "en",
+      "resourceType": "video",
+      "youtubeId": "c0KYU2j0TM4",
+      "youtubeUrl": "https://www.youtube.com/watch?v=c0KYU2j0TM4"
+    },
+    {
+      "id": "communication-10",
+      "title": "How to Make Hard Choices - TED",
+      "categoryId": "communication",
+      "topic": "Discussion",
+      "language": "en",
+      "resourceType": "video",
+      "youtubeId": "8GQZuzIdeQQ",
+      "youtubeUrl": "https://www.youtube.com/watch?v=8GQZuzIdeQQ"
+    },
+    {
+      "id": "critical-thinking-01",
+      "title": "5 Tips to Improve Your Critical Thinking - TED-Ed",
+      "categoryId": "critical-thinking",
+      "topic": "Critical Thinking",
+      "language": "en",
+      "resourceType": "video",
+      "youtubeId": "dItUGF8GdTw",
+      "youtubeUrl": "https://www.youtube.com/watch?v=dItUGF8GdTw"
+    },
+    {
+      "id": "critical-thinking-02",
+      "title": "This Tool Will Help Improve Your Critical Thinking - TED-Ed",
+      "categoryId": "critical-thinking",
+      "topic": "Critical Thinking",
+      "language": "en",
+      "resourceType": "video",
+      "youtubeId": "vNDYUlxNIAA",
+      "youtubeUrl": "https://www.youtube.com/watch?v=vNDYUlxNIAA"
+    },
+    {
+      "id": "critical-thinking-03",
+      "title": "The Psychology Behind Irrational Decisions - TED-Ed",
+      "categoryId": "critical-thinking",
+      "topic": "Decision Making",
+      "language": "en",
+      "resourceType": "video",
+      "youtubeId": "V2EMuoM5IX4",
+      "youtubeUrl": "https://www.youtube.com/watch?v=V2EMuoM5IX4"
+    },
+    {
+      "id": "critical-thinking-04",
+      "title": "Can You Outsmart This Logical Fallacy - TED-Ed",
+      "categoryId": "critical-thinking",
+      "topic": "Logic",
+      "language": "en",
+      "resourceType": "video",
+      "youtubeId": "Ghbkv0MKV-w",
+      "youtubeUrl": "https://www.youtube.com/watch?v=Ghbkv0MKV-w"
+    },
+    {
+      "id": "critical-thinking-05",
+      "title": "Rethinking Thinking - TED-Ed",
+      "categoryId": "critical-thinking",
+      "topic": "Cognitive Bias",
+      "language": "en",
+      "resourceType": "video",
+      "youtubeId": "KJLqOclPqis",
+      "youtubeUrl": "https://www.youtube.com/watch?v=KJLqOclPqis"
+    },
+    {
+      "id": "critical-thinking-06",
+      "title": "4 Tips for Developing Critical Thinking Skills - TEDx",
+      "categoryId": "critical-thinking",
+      "topic": "Critical Thinking",
+      "language": "en",
+      "resourceType": "video",
+      "youtubeId": "Bry8J78Awq0",
+      "youtubeUrl": "https://www.youtube.com/watch?v=Bry8J78Awq0"
+    },
+    {
+      "id": "critical-thinking-07",
+      "title": "Encourage Critical Thinking with 3 Questions - TEDx",
+      "categoryId": "critical-thinking",
+      "topic": "Questions",
+      "language": "en",
+      "resourceType": "video",
+      "youtubeId": "0hoE8mtUS1E",
+      "youtubeUrl": "https://www.youtube.com/watch?v=0hoE8mtUS1E"
+    },
+    {
+      "id": "critical-thinking-08",
+      "title": "3 Kinds of Bias That Shape Your Worldview - TED",
+      "categoryId": "critical-thinking",
+      "topic": "Bias",
+      "language": "en",
+      "resourceType": "video",
+      "youtubeId": "LcNvkhS4UYg",
+      "youtubeUrl": "https://www.youtube.com/watch?v=LcNvkhS4UYg"
+    },
+    {
+      "id": "critical-thinking-09",
+      "title": "How to Stop AI from Killing Your Critical Thinking - TED",
+      "categoryId": "critical-thinking",
+      "topic": "AI Literacy",
+      "language": "en",
+      "resourceType": "video",
+      "youtubeId": "3lPnN8omdPA",
+      "youtubeUrl": "https://www.youtube.com/watch?v=3lPnN8omdPA"
+    },
+    {
+      "id": "critical-thinking-10",
+      "title": "The Importance of Critical Thinking - TEDx",
+      "categoryId": "critical-thinking",
+      "topic": "Critical Thinking",
+      "language": "en",
+      "resourceType": "video",
+      "youtubeId": "Vqg3Irr5-14",
+      "youtubeUrl": "https://www.youtube.com/watch?v=Vqg3Irr5-14"
+    }
+  ]
+}
