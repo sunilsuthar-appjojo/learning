@@ -15,16 +15,31 @@ import {
   History
 } from 'lucide-react';
 
-const menuItems = [
-  { href: '/', label: 'Dashboard', icon: LayoutDashboard },
-  { href: '/tasks', label: 'Task Management', icon: ClipboardList },
-  { href: '/categories', label: 'Categories', icon: FolderTree },
-  { href: '/courses', label: 'Courses', icon: BookOpen },
-  { href: '/lessons', label: 'Lessons', icon: FileText },
-  { href: '/users', label: 'Users', icon: Users },
-  { href: '/progress', label: 'Progress', icon: TrendingUp },
-  { href: '/history', label: 'Learning History', icon: History },
-  { href: '/settings', label: 'Settings', icon: Settings },
+const menuSections = [
+  {
+    title: 'Main',
+    items: [
+      { href: '/', label: 'Dashboard', icon: LayoutDashboard },
+      { href: '/tasks', label: 'Tasks', icon: ClipboardList },
+    ]
+  },
+  {
+    title: 'Learning',
+    items: [
+      { href: '/categories', label: 'Categories', icon: FolderTree },
+      { href: '/courses', label: 'Courses', icon: BookOpen },
+      { href: '/lessons', label: 'Lessons', icon: FileText },
+      { href: '/progress', label: 'Progress', icon: TrendingUp },
+      { href: '/history', label: 'History', icon: History },
+    ]
+  },
+  {
+    title: 'System',
+    items: [
+      { href: '/users', label: 'Users', icon: Users },
+      { href: '/settings', label: 'Settings', icon: Settings },
+    ]
+  }
 ];
 
 export default function Sidebar() {
@@ -46,30 +61,44 @@ export default function Sidebar() {
       </div>
 
       {/* Navigation */}
-      <nav className="p-4 space-y-1">
-        {menuItems.map((item) => {
-          const Icon = item.icon;
-          const isActive = pathname === item.href;
+      <nav className="p-4 space-y-6 overflow-y-auto h-[calc(100vh-180px)]">
+        {menuSections.map((section) => (
+          <div key={section.title}>
+            {/* Section Title */}
+            <div className="px-4 mb-2">
+              <h3 className="text-xs font-bold text-indigo-300 uppercase tracking-wider">
+                {section.title}
+              </h3>
+            </div>
 
-          return (
-            <Link
-              key={item.href}
-              href={item.href}
-              className={`
-                flex items-center gap-3 px-4 py-3 rounded-xl
-                transition-all duration-200
-                ${
-                  isActive
-                    ? 'bg-white text-indigo-600 shadow-lg font-semibold scale-105'
-                    : 'text-indigo-100 hover:bg-white/10 hover:text-white hover:translate-x-1'
-                }
-              `}
-            >
-              <Icon className="w-5 h-5 flex-shrink-0" />
-              <span className="text-sm">{item.label}</span>
-            </Link>
-          );
-        })}
+            {/* Section Items */}
+            <div className="space-y-1">
+              {section.items.map((item) => {
+                const Icon = item.icon;
+                const isActive = pathname === item.href;
+
+                return (
+                  <Link
+                    key={item.href}
+                    href={item.href}
+                    className={`
+                      flex items-center gap-3 px-4 py-3 rounded-xl
+                      transition-all duration-200
+                      ${
+                        isActive
+                          ? 'bg-white text-indigo-600 shadow-lg font-semibold scale-105'
+                          : 'text-indigo-100 hover:bg-white/10 hover:text-white hover:translate-x-1'
+                      }
+                    `}
+                  >
+                    <Icon className="w-5 h-5 flex-shrink-0" />
+                    <span className="text-sm">{item.label}</span>
+                  </Link>
+                );
+              })}
+            </div>
+          </div>
+        ))}
       </nav>
 
       {/* Footer Info */}
